@@ -8,55 +8,131 @@ import static java.lang.Math.abs;
 public class Arr {
     public static void main(String[] args) {
 
-        int []arr={1,2,3,8,2,2,9};
-        int x=2;
-        System.out.println(Arrays.toString(findAll(arr, x)));
+        int[] arr = {1, 2, 3, 4, 5};
+        int x = 9;
+        int pos = 5;
 
-    };
-    public static int[] findAll(int[] arr, int x){
-        int count= 0;
-        for (int i =0; i< arr.length; i++){
-            if (arr[i] == x)
+        int[] ins = {7, 8, 9};
+        //результат: [1,2,3,7,8,9,4,5]
+
+       // System.out.println(Arrays.toString(add2(arr, x, pos)));
+        System.out.println(Arrays.toString(add(arr, ins, pos)));
+
+    }
+
+    ;
+
+    public static int[] add(int[] arr, int[] ins, int pos) {
+
+
+        int[] resArr = new int[arr.length + ins.length];
+        int y = 0;
+
+        for (int i = 0; i < arr.length + ins.length; i++) {
+            if (i == pos) {
+                for (int z = 0; z < ins.length; z++) {
+                    resArr[i++] =ins[z];
+                    ;
+
+                }
+                i--;
+
+            } else
+                resArr[i] = arr[y++];
+
+        }
+        return resArr;
+
+
+    }
+
+    ;
+
+
+    public static int[] add2(int[] arr, int x, int pos) {
+        int[] resArr = new int[arr.length + 1];
+        int y = 0;
+        for (int i = 0; i < arr.length+1; i++) {
+            if (i == pos) {
+                resArr[i] = x;
+
+            } else
+                resArr[i] = arr[y++];
+
+        }
+        return resArr;
+
+
+    }
+
+    ;
+
+
+    public static int[] deleteNegative(int[] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= 0)
                 count++;
         }
-        int[]arrRes = new int[count];
-        int y=0;
-        for (int i =0; i< arr.length; i++){
-            if (arr[i] == x){
-                arrRes[y++]=i;
+        int[] arrRes = new int[count];
+        int y = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= 0) {
+                arrRes[y++] = arr[i];
 
             }
         }
         return arrRes;
-    };
+    }
+
+    ;
 
 
+    public static int[] findAll(int[] arr, int x) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x)
+                count++;
+        }
+        int[] arrRes = new int[count];
+        int y = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                arrRes[y++] = i;
 
-    public static int[] concat(int[] arr1, int[] arr2){
+            }
+        }
+        return arrRes;
+    }
+
+    ;
+
+
+    public static int[] concat(int[] arr1, int[] arr2) {
         int len = arr1.length + arr2.length;
-        int[]arr = new int[len];
-        for (int i = 0; i< arr1.length; i++){
+        int[] arr = new int[len];
+        for (int i = 0; i < arr1.length; i++) {
             arr[i] = arr1[i];
         }
-        for (int y = 0; y< arr2.length; y++){
-            arr[arr1.length +y] = arr2[y];
+        for (int y = 0; y < arr2.length; y++) {
+            arr[arr1.length + y] = arr2[y];
         }
         return arr;
-    };
+    }
+
+    ;
 
 
-
-
-
-    public static int[] reverseBack(int[] arr){
+    public static int[] reverseBack(int[] arr) {
         int[] arr2 = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
             arr2[arr.length - 1 - i] = arr[i];
 
         }
         return arr2;
-    };
+    }
 
+    ;
 
 
     public static void reverse(int[] arr) {
