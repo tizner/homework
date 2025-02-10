@@ -8,17 +8,17 @@ import static java.lang.Math.abs;
 public class Arr {
     public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3, 4, 5};
-        int x = 9;
-        int pos = 5;
+        int[] arr = {1,2,3,4,5};
+        int[] ins = {7,8,9};
+        int pos = 3;
 
-        int[] ins = {7, 8, 9};
-        //результат: [1,2,3,7,8,9,4,5]
+       System.out.println(Arrays.toString(add(arr, ins,pos)));
 
-       // System.out.println(Arrays.toString(add2(arr, x, pos)));
-        System.out.println(Arrays.toString(add(arr, ins, pos)));
+
 
     }
+
+
 
     ;
 
@@ -29,21 +29,17 @@ public class Arr {
         int y = 0;
 
         for (int i = 0; i < arr.length + ins.length; i++) {
-            if (i == pos) {
+            if (i == pos && ins.length>0) {
                 for (int z = 0; z < ins.length; z++) {
                     resArr[i++] =ins[z];
-                    ;
 
                 }
                 i--;
 
             } else
                 resArr[i] = arr[y++];
-
         }
         return resArr;
-
-
     }
 
     ;
