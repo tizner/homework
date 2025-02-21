@@ -1,5 +1,8 @@
 package StepUP;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 public class Line {
 
         int x1;
@@ -23,13 +26,13 @@ public class Line {
         this.y2 = t2.y;
 
     }
-    public float  getLength(){
-        return
+    public double getLength(){
+        return sqrt(pow(x2-x1,2) + pow(y2-y1,2));
 
     }
 
     public String toString() {
-        return "Линия от{" + x1 + ";" + y1 + "} до {" + x2+ ";" + y2 +"}";
+        return "Линия от {" + x1 + ";" + y1 + "} до {" + x2+ ";" + y2 +"}";
 
     }
 

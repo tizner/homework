@@ -14,6 +14,9 @@ public class StartClasses {
         System.out.println(l1);
         System.out.println(l2);
 
+        System.out.println(l1.getLength());
+        System.out.println(l2.getLength());
+
 
     }
 }
