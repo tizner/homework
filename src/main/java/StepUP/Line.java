@@ -25,6 +25,9 @@ public class Line {
         this.x2 = t2.x;
         this.y2 = t2.y;
 
+
+
+
     }
     public double getLength(){
         return sqrt(pow(x2-x1,2) + pow(y2-y1,2));
