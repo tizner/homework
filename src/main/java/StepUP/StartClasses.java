@@ -20,14 +20,12 @@ public class StartClasses {
         t2.y = 9;
         t3.x = 11;
         t3.y = 12;
-        System.out.println("------");
+        System.out.println("--------");
         System.out.println(t2);
         System.out.println(t3);
-
         System.out.println(l3);
-
-
-
+        System.out.println("--------");
+        System.out.println(l1.getLength() + l2.getLength()+ l3.getLength());
 
 
     }
